@@ -1,0 +1,10 @@
+.wrapper {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+
+  .clear {
+    color: red;
+    cursor: pointer;
+  }
+}

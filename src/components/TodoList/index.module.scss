@@ -1,0 +1,17 @@
+.ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.li {
+  display: flex;
+  gap: 20px;
+  align-self: center;
+  line-height: 3;
+}
+
+.remove {
+  color: red;
+  cursor: pointer;
+}
