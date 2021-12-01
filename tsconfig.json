@@ -2,8 +2,8 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "esnext",
-    "allowJs": false,
-    "checkJs": false,
+    "allowJs": true,
+    "checkJs": true,
     "sourceMap": false,
     "isolatedModules": true,
     "outDir": "./build",
@@ -11,17 +11,7 @@
     "strictNullChecks": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "typeRoots": [
-      "./node_modules/@types"
-    ],
-    "types": [
-      "node"
-    ],
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -31,17 +21,6 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": "src",
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
   },
-  "include": [
-    ".",
-    "src"
-  ],
-  "exclude": [
-    "./node_modules",
-    "./build",
-    "./__tests__",
-    "./frontend",
-    "./coverage"
-  ]
 }
