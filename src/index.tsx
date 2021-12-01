@@ -8,7 +8,8 @@ import App from 'App';
 import { store } from 'store';
 
 import ruRU from 'antd/lib/locale/ru_RU';
-import 'antd/dist/antd.less';
+import 'styles/antd.less';
+import 'styles/global.scss';
 
 ReactDOM.render(
   <React.StrictMode>
