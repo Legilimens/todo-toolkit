@@ -17,10 +17,7 @@ const initialState: TTodos = {
   error: null,
 };
 
-const setError = (
-  state: TTodos,
-  { payload }: PayloadAction<AxiosError>,
-) => {
+const setError = (state: TTodos, { payload }: PayloadAction<AxiosError>) => {
   state.loading = false;
   state.error = payload;
 };

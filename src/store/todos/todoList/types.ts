@@ -1,4 +1,4 @@
-import { AxiosError } from "axios";
+import { AxiosError } from 'axios';
 
 export const TODOLIST_SLICE_ALIAS = 'todoList' as const;
 

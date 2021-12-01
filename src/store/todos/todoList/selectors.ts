@@ -8,7 +8,5 @@ export const getAsyncTodoIsLoading = (state: RootState) =>
 export const testSelector = createSelector(
   getTodoList,
   getAsyncTodoIsLoading,
-  (todoList, isLoading) => {
-    return [...todoList, isLoading || null];
-  },
+  (todoList, isLoading) => [...todoList, isLoading || null],
 );

@@ -36,7 +36,8 @@ const InputField = () => {
           </div>
           <span
             className={styles.remove}
-            onClick={() => handleRemoveTodo(todo.id)}>
+            onClick={() => handleRemoveTodo(todo.id)}
+          >
             &times;
           </span>
         </li>
