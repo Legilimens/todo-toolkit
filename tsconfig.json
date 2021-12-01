@@ -2,8 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "esnext",
-    "allowJs": true,
-    "checkJs": true,
+    "allowJs": false,
     "sourceMap": false,
     "isolatedModules": true,
     "outDir": "./build",
