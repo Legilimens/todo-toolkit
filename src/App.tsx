@@ -1,15 +1,15 @@
 import React from 'react';
 
-import InputField from 'components/InputField'
-import TodoList from 'components/TodoList'
+import InputField from 'components/InputField';
+import TodoList from 'components/TodoList';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <InputField />
       <TodoList />
     </div>
   );
-}
+};
 
 export default App;

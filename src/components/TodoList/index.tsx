@@ -2,10 +2,8 @@ import React from 'react';
 
 import { useAppDispatch, useAppSelector } from 'customHooks/redux';
 
-import {
-  toggleTodoCompleteAction,
-  removeTodoAction,
-} from 'store/todos/todoList/todoListSlice';
+import { toggleTodoCompleteAction } from 'store/todos/todoList/todoListSlice';
+import { removeTodoAsyncAction } from 'store/todos/todoList/thunk';
 import { getTodoList } from 'store/todos/todoList/selectors';
 
 import styles from './index.module.scss';
@@ -19,7 +17,7 @@ const InputField = () => {
   };
 
   const handleRemoveTodo = (id: string) => {
-    dispatch(removeTodoAction(id));
+    dispatch(removeTodoAsyncAction(id));
   };
 
   return (
@@ -33,7 +31,8 @@ const InputField = () => {
               checked={todo.completed}
               onChange={() => handleToggleTodoComplete(todo.id)}
             />
-            <label htmlFor={todo.id}>{todo.text}</label>
+            &nbsp;
+            <label htmlFor={todo.id}>{todo.title}</label>
           </div>
           <span
             className={styles.remove}

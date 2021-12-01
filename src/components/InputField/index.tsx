@@ -1,18 +1,22 @@
 import React from 'react';
+import { Button } from 'antd';
 
 import { useAppDispatch, useAppSelector } from 'customHooks/redux';
 
-import { getTodoFieldText } from 'store/todos/todoField/selectors';
 import {
   clearTextAction,
   setTextAction,
 } from 'store/todos/todoField/todoFieldSlice';
 import { addTodoAction } from 'store/todos/todoList/todoListSlice';
+import { fetchTodosAction } from 'store/todos/todoList/thunk';
+import { getTodoFieldText } from 'store/todos/todoField/selectors';
+import { getAsyncTodoIsLoading } from 'store/todos/todoList/selectors';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const InputField = () => {
   const fieldText = useAppSelector(getTodoFieldText);
+  const asyncTodoIsLoading = useAppSelector(getAsyncTodoIsLoading);
   const dispatch = useAppDispatch();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,7 +32,7 @@ const InputField = () => {
       dispatch(
         addTodoAction({
           id: new Date().toISOString(),
-          text: fieldText,
+          title: fieldText,
           completed: false,
         }),
       );
@@ -36,13 +40,24 @@ const InputField = () => {
     }
   };
 
+  const handleFetchTodos = () => {
+    dispatch(fetchTodosAction());
+  };
+
   return (
     <div className={styles.wrapper}>
       <div>
         <input type="text" value={fieldText} onChange={handleInputChange} />
-        <button onClick={handleAddTodo}>Add</button>
+        <Button type="primary" onClick={handleAddTodo}>
+          Add
+        </Button>
       </div>
-      <span onClick={handleClearInput} className={styles.clear}>&times;</span>
+      <span onClick={handleClearInput} className={styles.clear}>
+        &times;
+      </span>
+      <Button onClick={handleFetchTodos} loading={asyncTodoIsLoading}>
+        Fetch todos
+      </Button>
     </div>
   );
 };

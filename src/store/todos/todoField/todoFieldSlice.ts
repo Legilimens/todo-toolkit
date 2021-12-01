@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { TTodoField } from 'store/todos/todoField/entities';
+import { TTodoField } from 'store/todos/todoField/types';
 
 const initialState: TTodoField = {
   text: '',
